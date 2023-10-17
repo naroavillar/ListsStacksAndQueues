@@ -41,18 +41,20 @@ namespace Common
             //TODO #1: add a new integer to the end of the list
             
             IntListNode newValue = new IntListNode(value);
+            //si no hay valor
             if (First == null)
             {
                 First = newValue;
             }
+            //si hay valor
             else
             {
                 IntListNode valueList = First;
-                while (valueList.Next != null)
+                while (valueList.Next != null)//después hay otro valor
                 {
                     valueList = valueList.Next;
                 }
-                valueList.Next = newValue;
+                valueList.Next = newValue; //es el último
             }
 
         }
@@ -68,9 +70,9 @@ namespace Common
             IntListNode value = First;
             int valueIndex = 0;
 
-            while (value != null)
+            while (value != null) //si hay valor 
             {
-                if (valueIndex == index)
+                if (valueIndex == index) 
                 {
                     return value;
                 }
@@ -90,6 +92,7 @@ namespace Common
             {
                 return 0;
             }
+
             return node.Value;
         }
 
@@ -99,7 +102,7 @@ namespace Common
             //TODO #4: return the number of elements on the list
             int count = 0;
             IntListNode node = First;
-            while (node != null)
+            while (node != null) //si hay valor
             {
                 count++;
                 node = node.Next;
@@ -116,7 +119,7 @@ namespace Common
                 return;
             }
 
-            if (index == 0)
+            if (index == 0) //el primer elemento
             {
                 if (First!=null)
                 {
@@ -130,7 +133,7 @@ namespace Common
             {
                 return;
             }
-            node.Next = node.Next.Next;
+            node.Next = node.Next.Next; 
         }
 
         
