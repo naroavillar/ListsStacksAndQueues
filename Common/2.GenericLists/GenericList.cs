@@ -38,6 +38,7 @@ public class GenericList<T> : IGenericList<T>
     public void Add(T value)
     {
         //TODO #1: add a new element to the end of the list
+        GenericList <T> myIntList= new GenericList <T> (value);
     }
 
     public GenericListNode<T> FindNode(int index)
@@ -69,5 +70,6 @@ public class GenericList<T> : IGenericList<T>
     public void Clear()
     {
         //TODO #6: remove all the elements on the list
+        First = null;
     }
 }

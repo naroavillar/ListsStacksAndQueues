@@ -39,17 +39,10 @@ namespace Common
             //TODO #3: return the element on the index-th position. YOU MUST USE GetNode(int). O if the position is out of bounds
             if (index >= 0 && index < NumElements)
             {
-                return GetNode(index);
+                return Values[index];
             }
-
-           
             
             return 0;
-        }
-
-        private int GetNode(int index)
-        {
-            return Values[index];
         }
 
 

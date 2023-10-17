@@ -26,12 +26,17 @@ namespace Common
         public void Add(T value)
         {
             //TODO #2: add a new element to the end of the list
+            Values[NumElements] = value;
+            NumElements++; 
         }
 
         public T Get(int index)
         {
             //TODO #3: return the element on the index-th position. YOU MUST USE GetNode(int). Return the default value for object class T if the position is out of bounds
-            
+            if (index >= 0 && index < NumElements)
+            {
+                return Values[index];
+            }
             return default(T);
         }
 
@@ -39,17 +44,26 @@ namespace Common
         {
             //TODO #4: return the number of elements on the list
 
-            return 0;
+            return NumElements;
         }
 
         public void Remove(int index)
         {
             //TODO #5: remove the element on the index-th position. Do nothing if position is out of bounds
+            if (index >= 0 && index < NumElements)
+            {
+                for (int i = index; i < NumElements - 1; i++)
+                {
+                    Values[i] = Values[i + 1];
+                }
+                NumElements--;
+            }
         }
 
         public void Clear()
         {
             //TODO #6: remove all the elements on the list
+            NumElements = 0;
         }
     }
 }
